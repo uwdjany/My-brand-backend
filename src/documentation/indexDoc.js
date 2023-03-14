@@ -95,7 +95,7 @@ const options = {
         },
       },
     },
-    "/api/list/users": {
+    "/api/user/all-user": {
         get: {
           tags: ["Users"],
           description: "Get All users",
@@ -112,7 +112,7 @@ const options = {
           },
         },
       },
-      "/api/user/get/{id}":  {
+      "/api/user/one-user/{id}":  {
         get: {
           security: [],
           tags: ["Users"],
@@ -179,6 +179,52 @@ const options = {
         },
       },
 
+
+      "/api/all/blog": {
+        get: {
+          tags: ["Blog"],
+          description: "Get All Blog Articles",
+          parameters: [],
+          security: [],
+          responses: {
+            200: {
+              description: "successfully",
+            },
+            500: {
+              description: "Internal Server Error",
+            },
+          },
+        },
+      },
+      '/api/add/blog':{
+        post:{
+          tags:['Blog'],
+          description:'Create new blog article',
+      
+          requestBody: {
+            content: {
+              'multipart/form-data': {
+                schema: {
+                  $ref: '#/components/schemas/Blog',
+                },
+              },
+            },
+            required: true,
+          },
+          responses: {
+            200: {
+              description: 'successfully',
+            },
+            401: {
+              description: 'User Not Authorized',
+            },
+            500: {
+                description: 'Internal Server Error'
+            }
+          }, 
+        }
+      },
+
       "/api/blog/{id}": {
         delete: {
           tags: ["Blog"],
@@ -217,7 +263,7 @@ const options = {
         },
       },
 
-      "/api/blog/:id":  {
+      "/api/blog/{id}":  {
         get: {
           security: [],
           tags: ["Blog"],
@@ -241,90 +287,7 @@ const options = {
       },
    
    
-    "/api/all/blog": {
-      get: {
-        tags: ["Blog"],
-        description: "Get All Blog Articles",
-        parameters: [],
-        security: [],
-        responses: {
-          200: {
-            description: "successfully",
-          },
-          500: {
-            description: "Internal Server Error",
-          },
-        },
-      },
-    },
-    "/api/add/blog": {
-      post: {
-        tags: ["Blog"],
-        description: "Create new blog article",
-        requestBody: {
-          content: {
-            "application/json": {
-              schema: {
-                $ref: "#/components/schemas/Blog",
-              },
-            },
-          },
-          required: true,
-        },
-        responses: {
-          200: {
-            description: "successfully",
-          },
-          401: {
-            description: "User Not Authorized",
-          },
-          500: {
-            description: "Internal Server Error",
-          },
-        },
-      },
-    },
-    "/api/update/{id}": {
-      put: {
-        tags: ["Blog"],
-        description: "Update blog article",
-        parameters: [
-          {
-            in: "path",
-            name: "id",
-            required: true,
-          },
-        ],
-        requestBody: {
-          content: {
-            "application/json": {
-              schema: {
-                $ref: "#/components/schemas/Blog",
-              },
-              example: {
-                title: "testing blog article title update",
-                content: "testing blog article content update",
-              },
-            },
-          },
-          required: true,
-        },
-        responses: {
-          200: {
-            description: "successfully",
-          },
-          401: {
-            description: "User Not Authorized",
-          },
-          404: {
-            description: "Article doesn't exist!",
-          },
-          500: {
-            description: "Internal Server Error",
-          },
-        },
-      },
-    },
+  
     
     "/api/user/delete/{id}": {
       delete: {
@@ -363,84 +326,165 @@ const options = {
         },
       },
     },
-    // "/api/articles/{article_id}/comment": {
-    //   post: {
-    //     tags: ["Blog"],
-    //     description: "Comment on article blog article",
-    //     parameters: [
-    //       {
-    //         in: "path",
-    //         name: "article_id",
-    //         required: true,
-    //       },
-    //     ],
-    //     requestBody: {
-    //       content: {
-    //         "application/json": {
-    //           schema: {
-    //             $ref: "#/components/schemas/Blog",
-    //           },
-    //           example: {
-    //             comment: "that content is very helpful thanks",
-    //           },
-    //         },
-    //       },
-    //       required: true,
-    //     },
-    //     responses: {
-    //       200: {
-    //         description: "successfully",
-    //       },
-    //       401: {
-    //         description: "Not Authorized",
-    //       },
-    //       404: {
-    //         description: "Article doesn't exist!",
-    //       },
-    //       500: {
-    //         description: "Internal Server Error",
-    //       },
-    //     },
-    //   },
-    // },
-    // "/api/articles/{article_id}/like": {
-    //   post: {
-    //     tags: ["Blog"],
-    //     description: "Like on article blog article",
-    //     parameters: [
-    //       {
-    //         in: "path",
-    //         name: "article_id",
-    //         required: true,
-    //       },
-    //     ],
-    //     requestBody: {
-    //       content: {
-    //         "application/json": {
-    //           schema: {
-    //             $ref: "#/components/schemas/Blog",
-    //           },
+    "/api/delete/{id}": {
+      delete: {
+        tags: ["Blog"],
+        description: "Delete Blog by Id",
+        parameters: [
+          {
+            in: "path",
+            name: "id",
+            required: true,
+          },
+        ],
+        requestBody: {
+          content: {
+            "application/json": {
+              schema: {
+                $ref: "#/components/schemas/User",
+              },
+            },
+          },
+          required: true,
+        },
+        responses: {
+          200: {
+            description: "successfully",
+          },
+          401: {
+            description: "User Not Authorized",
+          },
+          404: {
+            description: "Article doesn't exist!",
+          },
+          500: {
+            description: "Internal Server Error",
+          },
+        },
+      },
+    },
+
+    "/api/update/{id}": {
+      put: {
+        tags: ["Blog"],
+        description: "Update blog article",
+        parameters: [
+          {
+            in: "path",
+            name: "id",
+            required: true,
+          },
+        ],
+        requestBody: {
+          content: {
+            "application/json": {
+              schema: {
+                $ref: "#/components/schemas/Blog",
+              },
+              example: {
+                title: "firstname",
+                content: "secondname",
+              
+              },
+            },
+          },
+          required: true,
+        },
+        responses: {
+          200: {
+            description: "successfully",
+          },
+          401: {
+            description: "User Not Authorized",
+          },
+          404: {
+            description: "Article doesn't exist!",
+          },
+          500: {
+            description: "Internal Server Error",
+          },
+        },
+      },
+    },
+
+    "/api/blog/{article_id}/comment": {
+      post: {
+        tags: ["Blog"],
+        description: "Comment on article blog article",
+        parameters: [
+          {
+            in: "path",
+            name: "article_id",
+            required: true,
+          },
+        ],
+        requestBody: {
+          content: {
+            "application/json": {
+              schema: {
+                $ref: "#/components/schemas/Blog",
+              },
+              example: {
+                comment: "that content is very helpful thanks",
+              },
+            },
+          },
+          required: true,
+        },
+        responses: {
+          200: {
+            description: "successfully",
+          },
+          401: {
+            description: "Not Authorized",
+          },
+          404: {
+            description: "Article doesn't exist!",
+          },
+          500: {
+            description: "Internal Server Error",
+          },
+        },
+      },
+    },
+    "/api/blog/{article_id}/like": {
+      post: {
+        tags: ["Blog"],
+        description: "Like on article blog article",
+        parameters: [
+          {
+            in: "path",
+            name: "article_id",
+           
+          },
+        ],
+        requestBody: {
+          content: {
+            "application/json": {
+              schema: {
+                $ref: "#/components/schemas/Blog",
+              },
              
-    //         },
-    //       },
-    //       required: true,
-    //     },
-    //     responses: {
-    //       200: {
-    //         description: "successfully",
-    //       },
-    //       401: {
-    //         description: "Not Authorized",
-    //       },
-    //       404: {
-    //         description: "Article doesn't exist!",
-    //       },
-    //       500: {
-    //         description: "Internal Server Error",
-    //       },
-    //     },
-    //   },
-    // },
+            },
+          },
+         
+        },
+        responses: {
+          200: {
+            description: "successfully",
+          },
+          401: {
+            description: "Not Authorized",
+          },
+          404: {
+            description: "Article doesn't exist!",
+          },
+          500: {
+            description: "Internal Server Error",
+          },
+        },
+      },
+    },
 
 
 

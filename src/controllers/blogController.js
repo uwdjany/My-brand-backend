@@ -100,14 +100,14 @@ export const deleteOne = (Model) => async (req, res, next) => {
   }
 };
 
-exports.commentingOnArticle = (req, res) => {
+export const commentingOnArticle = (req, res) => {
   const { article_id } = req.params;
   const { comment } = req.body;
   // console.log(article_id);
   User.findOne({
-    _id: req.user.id,
+    _id: req.user.id
   }).then((user) => {
-    console.log(user);
+//  console.log(user);
     const newComment = {
       user_id: user._id,
       email: user.email,
@@ -129,28 +129,32 @@ exports.commentingOnArticle = (req, res) => {
   });
 };
 
-exports.likeArticle = async (req, res) => {
+export const likeArticle = async (req, res) => {
   const { article_id } = req.params;
   const user_id = req.user.id;
 
   const newLike = {
     user_id,
   };
-  const article = await blogModel.findOne({ _id: article_id });
-  if (article) {
-    const found = article.likes.some(
-      (el) => el.user_id.toString() === user_id.toString()
-    );
-    if (found) {
-      article.likes = article.likes.filter(
-        (item) => item.user_id.toString() !== user_id.toString()
-      );
-    } else {
-      article.likes.push(newLike);
-    }
-    article
-      .save()
-      .then((result) => res.json(result))
-      .catch((error) => res.status(500).json({ error: error.message }));
-  } else res.status(404).json({ error: "article doesn't exist" });
+
+blogModel.findOne({_id:article_id})
+    .then(article=>{
+        if(article)
+        {
+            const found = article.likes.some(el => el.user_id.toString() === user_id.toString());
+            if (found) {
+               article.likes=article.likes.filter(item=>item.user_id.toString()!==user_id.toString())
+
+            }else
+            {
+                 article.likes.push(newLike);
+            }
+            article.save()
+            .then(result=>res.json(result))
+            .catch(error=>res.status(500).json({error:error.message}))
+        }
+        else res.status(404).json({error:"article doesn't exist"})
+    })
+    .catch(error=>res.json({error:error.message}))
 };
+

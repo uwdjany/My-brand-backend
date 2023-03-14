@@ -16,7 +16,7 @@ export const loginUser = async(req,res)=>{
     let {email,password} = req.body;
     const user = await userModel.findOne({email});
     if(!user){
-        return Response.errorMessage(res, "User is not exist", status.NOT_FOUND )
+        return Response.errorMessage(res, "user is not exist", status.NOT_FOUND);
     }
     if(isPasswordMatching(password,user.password)){
         user.password = null;
@@ -27,6 +27,8 @@ export const loginUser = async(req,res)=>{
             {user,token},
             status.OK
              )
+        //return res.status(200).json({message:"Logged in succefully"},{user,token})
     }
 return Response.errorMessage(res, "Invalid email or password", status.BAD_REQUEST);
+
 }

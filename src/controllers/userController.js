@@ -1,74 +1,77 @@
-import status from "http-status";
 import Response from "../utilis/response";
+import status from "http-status";
 
+export const createUser = (Model) => async (req, res, next) => {
+  try {
+    const data = await Model.create(req.body);
+    if (!data) {
+      return Response.errorMessage(
+        res,
+        "failed to register",
+        status.BAD_REQUEST
+      );
+    }
+    return Response.successMessage(res, "successfuly created", data, status.OK);
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-export const createUser =(Model)=> async(req,res,next)=>{
-    try {
-        const data = await Model.create()
+//get all datas
 
-        if(!data){
-            return Response.errorMessage(res, "Failed to create", status.BAD_REQUEST);
+export const getAllUser = (Model) => async (req, res, next) => {
+  try {
+    const data = await Model.find();
+    if (!data) {
+      return Response.errorMessage(res, "failed!", status.BAD_REQUEST);
+    }
+    return Response.successMessage(res, "Success", data, status.OK);
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-        }
-        return Response.successMessage(res, "success", data, status.OK);
-    } catch (error) {
-        console.log(error)
-        
-    }
+//get One By Id datas
 
-}
-  // Get all operation
-  export const getAll = (Model) => async (req, res, next) => {
-    try {
-      const data = await Model.find();
-      if (!data) {
-        return Response.errorMessage(res, "Failed", status.BAD_REQUEST);
-      }
-      return Response.successMessage(res, "success", data, status.OK);
-    } catch (error) {
-      console.log(error);
+export const getOneUser = (Model) => async (req, res, next) => {
+  try {
+    const data = await Model.findById(req.params.id);
+    if (!data) {
+      return Response.errorMessage(res, "failed!", status.BAD_REQUEST);
     }
-  };
-  //Get One operation
-  export const getOne = (Model) => async (req, res, next) => {
-    try {
-      const data = await Model.findById(req.params.id);
-      if (!data) {
-        return Response.errorMessage(res, "Failed", status.BAD_REQUEST);
-      }
-      return Response.successMessage(res, "Success", data, status.OK);
-    } catch (error) {
-      console.log(error);
+    return Response.successMessage(res, "Success", data, status.OK);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//Update One By Id datas
+
+export const updateUser = (Model) => async (req, res, next) => {
+  try {
+    const data = await Model.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
+    if (!data) {
+      return Response.errorMessage(res, "failed", status.BAD_REQUEST);
     }
-  };
-  
-  //Update Operation
-  
-  export const update = (Model) => async (req, res, next) => {
-    try {
-      const data = await Model.findByIdAndUpdate(req.params.id, req.body, {
-        new: true,
-      });
-      if (!data) {
-        return Response.errorMessage(res, "Failed", status.BAD_REQUEST);
-      }
-      return Response.successMessage(res, "Success", data, status.OK);
-    } catch (error) {
-      console.log(error);
+    return Response.successMessage(res, "Success", data, status.OK);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//delete One By Id datas
+
+export const deleteUser = (Model) => async (req, res, next) => {
+  try {
+    const data = await Model.findByIdAndDelete(req.params.id);
+
+    if (!data) {
+      return Response.errorMessage(res, "failed!", status.BAD_REQUEST);
     }
-  };
-  
-  //Delete Operation
-  
-  export const deleteOne = (Model) => async (req, res, next) => {
-    try {
-      const data = await Model.findByIdAndDelete(req.params.id);
-      if (!data) {
-        return Response.errorMessage(res, "Failed", status.BAD_REQUEST);
-      }
-      return Response.successMessage(res, "Success", data, status.OK);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  
+    return Response.successMessage(res, "Success", data, status.OK);
+  } catch (error) {
+    console.log(error);
+  }
+};

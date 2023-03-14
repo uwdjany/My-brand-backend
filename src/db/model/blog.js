@@ -7,7 +7,7 @@ const Schema = new mongoose.Schema(
     comments: [
       {
         user_id: {
-          type: mongoose.Schema.Types.ObjectId,
+          type: mongoose.Schema.ObjectId,
           required: true,
           ref: "user",
         },
@@ -28,7 +28,7 @@ const Schema = new mongoose.Schema(
     likes: [
       {
         user_id: {
-          type: mongoose.Schema.Types.ObjectId,
+          type: mongoose.Schema.ObjectId,
           required: true,
           ref: "user",
         },
