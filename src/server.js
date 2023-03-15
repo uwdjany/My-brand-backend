@@ -10,21 +10,27 @@ app.use(bodyParser.json());
 app.use(fileUploader({ useTempFiles: true }));
 app.use("/api", route);
 app.use("/mybrand", docoment);
-
-const database = process.env.myDb;
-mongoose
-  .connect(database, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => {
-    console.log("Database Well connected");
-  });
 const port = process.env.PORT || 4040;
-if (process.env.NODE_ENV !== "test") {
+
+
+
+const connectDB = async () => {
+  try {
+    const conn = await mongoose.connect(process.env.myDb);
+    console.log(`MongoDB Connected: ${conn.connection.host}`);
+  } catch (error) {
+    console.log(error);
+    process.exit(1);
+  }
+}
+
+//Connect to the database before listening
+connectDB().then(() => {
+  if (process.env.NODE_ENV !== "test") {
   app.listen(port, () => {
-    console.log(`server is running on ${port}`);
-  });
-  app.use("/", (res,req)=>{
-    res.send("welcome to our brand")
+      console.log(`server is running on ${port}`);
   })
 }
+})
 
 export default app
