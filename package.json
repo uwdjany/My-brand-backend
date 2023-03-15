@@ -1,8 +1,11 @@
 {
   "name": "my-brand-backend",
   "version": "1.0.0",
+
   "description": "",
   "main": "server.js",
+  "description": "", 
+
   "scripts": {
    "start":"nodemon server.js",
     "test": "cross-env NODE_ENV=test PORT=8080 jest --coverage"
