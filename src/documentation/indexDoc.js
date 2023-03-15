@@ -138,7 +138,7 @@ const options = {
       "/api/user/update/{id}": {
         put: {
           tags: ["Users"],
-          description: "Update blog article",
+          description: "Update a user",
           parameters: [
             {
               in: "path",
@@ -180,7 +180,7 @@ const options = {
       },
 
 
-      "/api/all/blog": {
+      "/api/blog": {
         get: {
           tags: ["Blog"],
           description: "Get All Blog Articles",
@@ -196,7 +196,7 @@ const options = {
           },
         },
       },
-      '/api/add/blog':{
+      '/api/blog/add':{
         post:{
           tags:['Blog'],
           description:'Create new blog article',
@@ -326,7 +326,7 @@ const options = {
         },
       },
     },
-    "/api/delete/{id}": {
+    "/api/blog/delete/{id}": {
       delete: {
         tags: ["Blog"],
         description: "Delete Blog by Id",
@@ -364,7 +364,7 @@ const options = {
       },
     },
 
-    "/api/update/{id}": {
+    "/api/blog/update/{id}": {
       put: {
         tags: ["Blog"],
         description: "Update blog article",

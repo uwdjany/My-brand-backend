@@ -27,7 +27,7 @@ export const loginUser = async(req,res)=>{
             {user,token},
             status.OK
              )
-        //return res.status(200).json({message:"Logged in succefully"},{user,token})
+      
     }
 return Response.errorMessage(res, "Invalid email or password", status.BAD_REQUEST);
 

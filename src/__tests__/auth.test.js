@@ -1,7 +1,7 @@
 import chai from "chai";
 import { expect } from "chai";
 import chaiHttp from "chai-http";
-import User from "../db/model/user";
+
 import "dotenv/config";
 import server from "../server";
 

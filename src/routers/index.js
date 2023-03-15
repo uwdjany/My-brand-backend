@@ -18,11 +18,11 @@ router.put("/user/update/:id", UserServices.updateUserService);
 
 //blog
 
-router.post("/add/blog", protect, BlogServices.createBlogServices);
+router.post("/blog/add", protect, BlogServices.createBlogServices);
 router.get("/blog/:id", BlogServices.getOneServices);
-router.get("/all/blog", BlogServices.getAllBlogService);
-router.delete("/delete/:id",protect, BlogServices.deleteOneBlog);
-router.put("/update/:id",protect, BlogServices.updateBlog);
+router.get("/blog", BlogServices.getAllBlogService);
+router.delete("/blog/delete/:id",protect, BlogServices.deleteOneBlog);
+router.put("/blog/update/:id",protect, BlogServices.updateBlog);
 router.post("/blog/:article_id/comment", protect, commentingOnArticle);
 router.post("/blog/:article_id/like", protect, likeArticle);
 
