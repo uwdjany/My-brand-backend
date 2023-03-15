@@ -2,6 +2,7 @@ import { Router } from "express"
 import {loginUser,checkUser} from "../middleware/checkUserExit"
 import * as UserServices from "../services/userServices"
 import { protect } from "../middleware/veryfyToken";
+import * as MeassageServices from "../controllers/messageController";
 import {
   commentingOnArticle,
   likeArticle,
@@ -25,5 +26,7 @@ router.delete("/blog/delete/:id",protect, BlogServices.deleteOneBlog);
 router.put("/blog/update/:id",protect, BlogServices.updateBlog);
 router.post("/blog/:article_id/comment", protect, commentingOnArticle);
 router.post("/blog/:article_id/like", protect, likeArticle);
+//message
+router.post("/message/send", MeassageServices.sendMessage )
 
 export default router;
