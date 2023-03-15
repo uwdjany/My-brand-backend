@@ -28,5 +28,6 @@ router.post("/blog/:article_id/comment", protect, commentingOnArticle);
 router.post("/blog/:article_id/like", protect, likeArticle);
 //message
 router.post("/message/send", MeassageServices.sendMessage )
+router.get("/message/all", MeassageServices.getAllMessage)
 
 export default router;

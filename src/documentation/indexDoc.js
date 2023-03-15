@@ -490,7 +490,7 @@ const options = {
 
 
     
-    "/api/send/meesage": {
+    "/api/message/send": {
       post: {
         tags: ["Message"],
         security: [],
@@ -521,7 +521,7 @@ const options = {
         },
       },
     },
-    "/api/get-all/message": {
+    "/api/message/all": {
       get: {
         tags: ["Message"],
         description: "Getting all messages",
