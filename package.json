@@ -1,10 +1,15 @@
 {
   "name": "my-brand-backend",
   "version": "1.0.0",
+
   "description": "",
   "main": "server.js",
+  "description": "", 
+
   "scripts": {
-    "dev": "nodemon --exec babel-node ./src/server.js",
+    
+    
+    
     "test": "cross-env NODE_ENV=test PORT=8080 jest --coverage"
   },
   "author": "Djanati",
