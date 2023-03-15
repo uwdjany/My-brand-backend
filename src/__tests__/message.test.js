@@ -12,19 +12,19 @@ dotenv.config();
 import User from '../models/userModel'
 
 const testingMessage={
-    name:"John Doe",
-    email:"john@gmail.com",
+    name:"m",
+    email:"takua@gmail.com",
     message:"testing message"
 }
 
 const admin={
     email:'admin2@gmail.com',
-    password:'123456'
+    password:'123'
 }
 const tester = {
-    username: 'James',
-      email: 'admin2@gmail.com',
-      password: '123456'
+    username: 'Uwase',
+      email: 'uwase@gmail.com',
+      password: '123'
   
   };
 
