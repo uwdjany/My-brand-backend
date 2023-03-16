@@ -15,7 +15,7 @@ describe("Testing Auth routes", () => {
     const res = await chai.request(server).post("/api/user/create").send({
       firstName: "testname1",
       lastName: "testname2",
-      email: "test090@gmail.com",
+      email: "tee12@gmail.com",
       password: "123",
     });
     expect(res.status).to.be.equal(200);
@@ -23,7 +23,7 @@ describe("Testing Auth routes", () => {
   });
   it("should login user.", async () => {
     const res = await chai.request(server).post("/api/user/login").send({
-      email: "djany@gmail.com",
+      email: "admin@gmail.com",
       password: "123",
     });
     expect(res.status).to.be.equal(200);
