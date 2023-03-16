@@ -10,13 +10,13 @@ import cloudinary from "../config/claudinary";
 const tester = {
   firstName: "adminName1",
   lastName:"adminName2",
-  email: "admin2@gmail.com",
+  email: "admin@gmail.com",
   role:"admin",
   password: "123",
 };
 
 const admin = {
-  email: "admin2@gmail.com",
+  email: "admin@gmail.com",
   password: "123",
 };
 const testingData = {
@@ -32,7 +32,7 @@ const testingDataUpdate = {
 chai.expect();
 chai.use(chaiHttp);
 
-jest.setTimeout(4000000);
+//jest.setTimeout(4000);
 describe("Testing Blog routes", () => {
   const sandbox = Sinon.createSandbox();
   beforeAll(async () => {

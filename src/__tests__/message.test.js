@@ -2,9 +2,9 @@
 
 import mongoose from 'mongoose' 
 mongoose.Promise = global.Promise
-import Message from "../models/message";
+import Message from "../db/model/message";
 import dotenv from 'dotenv';
-import app from '../app';
+import app from '../server';
 import chai from 'chai';
 import { expect } from 'chai';
 import chaiHttp from 'chai-http';
