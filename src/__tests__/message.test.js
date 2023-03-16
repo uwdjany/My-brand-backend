@@ -9,7 +9,7 @@ import chai from 'chai';
 import { expect } from 'chai';
 import chaiHttp from 'chai-http';
 dotenv.config();
-import User from '../models/userModel'
+import User from "../db/model/user"
 
 const testingMessage={
     name:"m",
