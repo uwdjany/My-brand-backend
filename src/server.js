@@ -8,7 +8,10 @@ import docoment from "./documentation/indexDoc";
 const app = express();
 app.use(bodyParser.json());
 app.use(fileUploader({ useTempFiles: true }));
-app.use("/api", route);
+app.use("/api", route,
+       (res,req)=>{
+  res.send("welcome to our brand")
+});
 app.use("/mybrand", docoment);
 
 const database = process.env.myDb;
@@ -22,7 +25,4 @@ const port = process.env.PORT || 4040;
   app.listen(port, () => {
     console.log(`server is running on ${port}`);
   });
-app.use("/", (res,req)=>{
-  res.send("welcome to our brand")
-})
 export default app
