@@ -21,8 +21,8 @@ const port = process.env.PORT || 4040;
 
   app.listen(port, () => {
     console.log(`server is running on ${port}`);
-         app.use("/",  (res,req)=>{
-  res.send("welcome to our brand")
-})
   });
+  app.use("/", (res,req)=>{
+    res.send("welcome to our brand")
+  })
 export default app
