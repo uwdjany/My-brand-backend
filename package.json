@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon --exec babel-node ./src/server.js",
-    "test": "cross-env NODE_ENV=test PORT=8080 jest --coverage"
+    "test": "jest"
   },
   "author": "Djanati",
   "license": "ISC",

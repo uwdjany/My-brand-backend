@@ -225,7 +225,7 @@ const options = {
         }
       },
 
-      "/api/blog/{id}": {
+      "/api/blog/delete/{id}": {
         delete: {
           tags: ["Blog"],
           description: "Delete blog article",
