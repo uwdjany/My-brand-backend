@@ -20,9 +20,13 @@ mongoose
   });
 const port = process.env.PORT || 4040;
 
+if (process.env.NODE_ENV !== "test") {
   app.listen(port, () => {
     console.log(`server is running on ${port}`);
   });
+
+
+}
 
 
 export default app
