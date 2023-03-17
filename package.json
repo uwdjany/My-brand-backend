@@ -1,11 +1,17 @@
 {
   "name": "my-brand-backend",
   "version": "1.0.0",
+
   "description": "",
   "main": "server.js",
+  "description": "", 
+
   "scripts": {
+
     "start": "nodemon --exec babel-node ./src/server.js",
+
     "test": "jest"
+
   },
   "author": "Djanati",
   "license": "ISC",
