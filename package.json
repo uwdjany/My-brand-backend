@@ -10,7 +10,7 @@
 
     "start": "nodemon --exec babel-node ./src/server.js",
 
-    "test": "jest"
+    "test": "cross-env NODE_ENV=test PORT=8080 jest --coverage"
 
   },
   "author": "Djanati",
