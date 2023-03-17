@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1678979896701" clover="3.2.0">
-  <project timestamp="1678979896701" name="All files">
-    <metrics statements="228" coveredstatements="104" conditionals="53" coveredconditionals="9" methods="51" coveredmethods="20" elements="332" coveredelements="133" complexity="0" loc="228" ncloc="228" packages="10" files="19" classes="19"/>
+<coverage generated="1679041763784" clover="3.2.0">
+  <project timestamp="1679041763785" name="All files">
+    <metrics statements="228" coveredstatements="88" conditionals="53" coveredconditionals="2" methods="51" coveredmethods="13" elements="332" coveredelements="103" complexity="0" loc="228" ncloc="228" packages="10" files="19" classes="19"/>
     <package name="src">
-      <metrics statements="14" coveredstatements="10" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="1"/>
+      <metrics statements="14" coveredstatements="9" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="0"/>
       <file name="server.js" path="E:\mybrand(backend)\src\server.js">
-        <metrics statements="14" coveredstatements="10" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="1"/>
+        <metrics statements="14" coveredstatements="9" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="0"/>
         <line num="8" count="3" type="stmt"/>
         <line num="9" count="3" type="stmt"/>
         <line num="10" count="3" type="stmt"/>
@@ -13,7 +13,7 @@
         <line num="12" count="3" type="stmt"/>
         <line num="14" count="3" type="stmt"/>
         <line num="15" count="3" type="stmt"/>
-        <line num="18" count="3" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
         <line num="20" count="3" type="cond" truecount="1" falsecount="1"/>
         <line num="21" count="3" type="cond" truecount="1" falsecount="1"/>
         <line num="22" count="0" type="stmt"/>
@@ -32,9 +32,9 @@
       </file>
     </package>
     <package name="src.controllers">
-      <metrics statements="124" coveredstatements="23" conditionals="34" coveredconditionals="1" methods="37" coveredmethods="12"/>
+      <metrics statements="124" coveredstatements="22" conditionals="34" coveredconditionals="0" methods="37" coveredmethods="11"/>
       <file name="blogController.js" path="E:\mybrand(backend)\src\controllers\blogController.js">
-        <metrics statements="77" coveredstatements="16" conditionals="20" coveredconditionals="1" methods="23" coveredmethods="6"/>
+        <metrics statements="77" coveredstatements="15" conditionals="20" coveredconditionals="0" methods="23" coveredmethods="6"/>
         <line num="8" count="3" type="stmt"/>
         <line num="9" count="3" type="stmt"/>
         <line num="10" count="3" type="stmt"/>
@@ -59,10 +59,10 @@
         <line num="49" count="3" type="stmt"/>
         <line num="50" count="2" type="stmt"/>
         <line num="51" count="2" type="stmt"/>
-        <line num="52" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="52" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="53" count="0" type="stmt"/>
-        <line num="55" count="2" type="stmt"/>
-        <line num="57" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="57" count="1" type="stmt"/>
         <line num="61" count="3" type="stmt"/>
         <line num="62" count="0" type="stmt"/>
         <line num="63" count="0" type="stmt"/>
@@ -114,7 +114,7 @@
         <line num="158" count="0" type="stmt"/>
       </file>
       <file name="messageController.js" path="E:\mybrand(backend)\src\controllers\messageController.js">
-        <metrics statements="12" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="1"/>
+        <metrics statements="12" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="0"/>
         <line num="4" count="3" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
@@ -215,31 +215,31 @@
       </file>
     </package>
     <package name="src.middleware">
-      <metrics statements="35" coveredstatements="22" conditionals="12" coveredconditionals="5" methods="5" coveredmethods="3"/>
+      <metrics statements="35" coveredstatements="12" conditionals="12" coveredconditionals="0" methods="5" coveredmethods="2"/>
       <file name="checkUserExit.js" path="E:\mybrand(backend)\src\middleware\checkUserExit.js">
-        <metrics statements="17" coveredstatements="15" conditionals="6" coveredconditionals="5" methods="2" coveredmethods="2"/>
+        <metrics statements="17" coveredstatements="6" conditionals="6" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="6" count="3" type="stmt"/>
         <line num="7" count="4" type="stmt"/>
         <line num="8" count="4" type="stmt"/>
-        <line num="9" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="10" count="1" type="stmt"/>
+        <line num="9" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="10" count="0" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
-        <line num="13" count="3" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
         <line num="15" count="3" type="stmt"/>
-        <line num="16" count="2" type="stmt"/>
-        <line num="17" count="2" type="stmt"/>
-        <line num="18" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="21" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="21" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
         <line num="32" count="0" type="stmt"/>
       </file>
       <file name="token.js" path="E:\mybrand(backend)\src\middleware\token.js">
-        <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <metrics statements="4" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="4" count="3" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
         <line num="7" count="3" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
       </file>
@@ -303,18 +303,18 @@
       </file>
     </package>
     <package name="src.utilis">
-      <metrics statements="6" coveredstatements="6" conditionals="3" coveredconditionals="1" methods="4" coveredmethods="4"/>
+      <metrics statements="6" coveredstatements="2" conditionals="3" coveredconditionals="0" methods="4" coveredmethods="0"/>
       <file name="hashedPassword.js" path="E:\mybrand(backend)\src\utilis\hashedPassword.js">
-        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <metrics statements="4" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="4" count="3" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
         <line num="8" count="3" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
       </file>
       <file name="response.js" path="E:\mybrand(backend)\src\utilis\response.js">
-        <metrics statements="2" coveredstatements="2" conditionals="3" coveredconditionals="1" methods="2" coveredmethods="2"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="13" count="4" type="stmt"/>
+        <metrics statements="2" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
       </file>
     </package>
   </project>
