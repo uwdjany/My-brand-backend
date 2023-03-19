@@ -5,10 +5,18 @@ import route from "./routers/index";
 import "dotenv/config";
 import fileUploader from "express-fileupload";
 import docoment from "./documentation/indexDoc";
+<<<<<<< HEAD
+=======
+import cors from "cors";
+>>>>>>> 3fb3ed3 (adding test)
 const app = express();
 app.use(bodyParser.json());
 app.use(fileUploader({ useTempFiles: true }));
 
+<<<<<<< HEAD
+=======
+app.use(cors());
+>>>>>>> 3fb3ed3 (adding test)
 app.use("/api", route);
 app.use("/mybrand", docoment);
 
@@ -24,9 +32,15 @@ if (process.env.NODE_ENV !== "test") {
   app.listen(port, () => {
     console.log(`server is running on ${port}`);
   });
+<<<<<<< HEAD
 
 
 }
 
 
 export default app
+=======
+}
+
+export default app;
+>>>>>>> 3fb3ed3 (adding test)
