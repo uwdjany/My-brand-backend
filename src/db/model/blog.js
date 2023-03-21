@@ -3,7 +3,10 @@ const Schema = new mongoose.Schema(
   {
     title: String,
     content: String,
+    author:String,
+    date:String,
     image: String,
+
     comments: [
       {
         user_id: {
