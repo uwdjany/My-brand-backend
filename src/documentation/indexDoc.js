@@ -584,6 +584,16 @@ const options = {
             type: "string",
             description: "Article title",
           },
+          author:{
+            type: "string",
+            description: "Author",
+
+          },
+          date:{
+            type: "string",
+            description: "posted date",
+
+          },
           content: {
             type: "string",
             description: "Article content",
